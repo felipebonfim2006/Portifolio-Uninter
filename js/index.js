@@ -1,3 +1,5 @@
+// Script para alternar entre temas claro e escuro
+
 const btn = document.getElementById("mudar-tema");
 
 function atualizarTextoBotao() {
@@ -27,3 +29,18 @@ if (btn) {
         atualizarTextoBotao();
     });
 }
+
+//Validação de e-mail no formulário de contato
+
+const form = document.querySelector('form');
+const emailInput = document.getElementById('email');
+
+form.addEventListener('submit', (event) => {
+    const emailValue = emailInput.value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(emailValue)) {
+        alert("Ops! O e-mail informado parece inválido.");
+        event.preventDefault(); // Impede o envio do formulário
+    }
+});
